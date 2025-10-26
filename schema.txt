@@ -1,0 +1,20 @@
+
+-- Create the database and users table
+CREATE DATABASE IF NOT EXISTS my_db;
+USE my_db;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    batch VARCHAR(50),
+    section VARCHAR(50),
+    token VARCHAR(32),
+    is_verified TINYINT(1) DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Optional: Create an index on email for faster lookups
+CREATE INDEX idx_email ON users(email);
+CREATE INDEX idx_token ON users(token);

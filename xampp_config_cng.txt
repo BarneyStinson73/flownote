@@ -1,0 +1,10 @@
+----- changes in php.ini-------
+upload_max_filesize = 50M
+post_max_size = 50M
+max_execution_time = 300
+memory_limit = 256M
+
+----changes in mysql ini(my.ini)-------
+max_allowed_packet = 50M
+wait_timeout = 600
+interactive_timeout = 600
